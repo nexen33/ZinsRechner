@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #09090b; /* zinc-950 */
+  --color-foreground: #fafafa; /* zinc-50 */
+  --color-card: #18181b; /* zinc-900 */
+  --color-card-foreground: #fafafa;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-primary: #10b981; /* emerald-500 */
+  --color-primary-foreground: #09090b;
+}
+
+@layer base {
+  :root {
+    --background: var(--color-background);
+    --foreground: var(--color-foreground);
+    --card: var(--color-card);
+    --card-foreground: var(--color-card-foreground);
+    --border: var(--color-border);
+    --primary: var(--color-primary);
+    --primary-foreground: var(--color-primary-foreground);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    color-scheme: dark;
+    font-family: 'Geist', 'Satoshi', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  input, textarea {
+    user-select: text;
+    -webkit-user-select: text;
+  }
+}
+
+/* Glassmorphism Refraction Utility */
+@layer utilities {
+  .glass-panel {
+    background-color: rgba(24, 24, 27, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 20px 40px -15px rgba(0,0,0,0.5);
+  }
+}
